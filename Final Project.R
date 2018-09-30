@@ -15,12 +15,10 @@ agg.data = data %>%
 census$POSTCODE = parse_number(census$POA_CODE_2016)
 
 data.merge = merge(agg.data, census, by = 'POSTCODE' )
+data.merge= data.merge %>% select(-c(KW,POA_CODE_2016,POSTCODE))
 
-# Relationship of Count and KW
-ggplot(data.merge, aes(KW,count)) + geom_point()
 
 # Building linear model
-model = lm(count ~ Total_Persons_Persons + Median_age_persons + Median_mortgage_repay_monthly +
-             Median_tot_hhd_inc_weekly + Average_household_size, data.merge)
+model = lm(count ~ ., data.merge)
 summary(model)
 
