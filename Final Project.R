@@ -22,6 +22,4 @@ data.merge= data.merge %>% select(-c(KW,POA_CODE_2016,POSTCODE))
 model = lm(count ~ ., data.merge)
 summary(model)
 
-# Hi Kob
-# Time to commit
 
