@@ -21,5 +21,5 @@ data.merge= data.merge %>% select(-c(KW,POA_CODE_2016,POSTCODE))
 # Building linear model
 model = lm(count ~ ., data.merge)
 summary(model)
-
+bugugyu
 
