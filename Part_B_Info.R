@@ -53,36 +53,36 @@ genMCMC = function( data , xName="x" , yName="y" ,
   # Specify the priors for original beta parameters
   # Prior locations to reflect the expert information
   mu0 <- ym # Set to overall mean a priori based on the interpretation of constant term in regression
-  mu[1] <- 90 # Area - Strong
-  mu[2] <- 100000 # Bedrooms- Weak
-  mu[3] <- 0.1 #no Expert Bathroom
-  mu[4] <- 120000 #Car Parks Strong
-  mu[5] <- -150000 # Strong Assuming 1 is house and 0 is unit
-  mu[6] <- 100000
-  mu[7] <- 1111
-  mu[8] <- 1111
-  mu[9] <- 1111
-  mu[10]  <- 1111
-  mu[11]  <- 1111
-  mu[12]  <- 1111
-  mu[13]  <- 1111
+  mu[1] <- 90         # Total_Persons_Persons
+  mu[2] <- 100000     # Median_age_persons
+  mu[3] <- 0.1        # Median_mortgage_repay_monthly
+  mu[4] <- 120000     # Median_tot_hhd_inc_weekly
+  mu[5] <- -150000    # Average_household_size
+  mu[6] <- 100000     # P_PGrad_Deg_Total
+  mu[7] <- 1111       # P_GradDip_and_GradCert_Total
+  mu[8] <- 1111       # P_BachDeg_Total
+  mu[9] <- 1111       # Certificates
+  mu[10]  <- 1111     # Not Sated
+  mu[11]  <- 1111     # Pbl_Trs
+  mu[12]  <- 1111     # Prv_Trs
+  mu[13]  <- 1111     # Non_Motor_Trs
   
 
   # Prior variances to reflect the expert information    
   Var0 <- ysd^2*50000 # set to a huge value
-  Var[1] <- ysd^2 # Area
-  Var[2] <- ysd^2 # Bedroom
-  Var[3] <- ysd^2*20 # Bathrom
-  Var[4] <- ysd^2 # CarPark
-  Var[5] <- ysd^2*5 # Unit or house 
-  Var[6] <- ysd^2
-  Var[7] <- ysd^2
-  Var[8] <- ysd^2
-  Var[9] <- ysd^2
-  Var[10] <- ysd^2
-  Var[11] <- ysd^2
-  Var[12] <- ysd^2
-  Var[13] <- ysd^2
+  Var[1] <- ysd^2     # Total_Persons_Persons
+  Var[2] <- ysd^2     # Median_age_persons
+  Var[3] <- ysd^2*20  # Median_mortgage_repay_monthly
+  Var[4] <- ysd^2     # Median_tot_hhd_inc_weekly
+  Var[5] <- ysd^2*5   # Average_household_size 
+  Var[6] <- ysd^2     # P_PGrad_Deg_Total
+  Var[7] <- ysd^2     # P_GradDip_and_GradCert_Total
+  Var[8] <- ysd^2     # P_BachDeg_Total
+  Var[9] <- ysd^2     # Certificates
+  Var[10] <- ysd^2    # Not Sated
+  Var[11] <- ysd^2    # Pbl_Trs
+  Var[12] <- ysd^2    # Prv_Trs
+  Var[13] <- ysd^2    # Non_Motor_Trs
   
   # Compute corresponding prior means and variances for the standardised parameters
   muZ[1:Nx] <-  mu[1:Nx] * xsd[1:Nx] / ysd 
